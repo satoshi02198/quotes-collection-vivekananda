@@ -1,10 +1,24 @@
-import './globals.css'
+import "./globals.css";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
+import { SessionProvider } from "@/components/SessionProvider";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Montserrat } from "@next/font/google";
 
-export default function RootLayout({
+const montserrat = Montserrat({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
+export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  const session = await getServerSession(authOptions);
+
   return (
     <html lang="en">
       {/*
@@ -12,7 +26,15 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body
+        className={`${montserrat.className} h-screen bg-gray-100 max-w-screen-2xl mx-auto`}
+      >
+        <SessionProvider session={session}>
+          <Header />
+          {children}
+          <Footer />
+        </SessionProvider>
+      </body>
     </html>
-  )
+  );
 }
