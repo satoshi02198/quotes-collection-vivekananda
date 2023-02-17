@@ -7,7 +7,8 @@ type Props = {
 };
 
 const Logout = ({ session }: Props) => {
-  const { user } = session;
+  const { user }: any = session;
+  console.log(session);
 
   return (
     <div>
