@@ -8,7 +8,6 @@ type Props = {
 
 const Logout = ({ session }: Props) => {
   const { user }: any = session;
-  console.log(session);
 
   return (
     <div>

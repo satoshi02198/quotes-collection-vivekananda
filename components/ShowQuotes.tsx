@@ -2,7 +2,7 @@
 
 import { db } from "@/firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { collection, getDoc, query } from "firebase/firestore";
+import { collection, query } from "firebase/firestore";
 import Quote from "./Quote";
 import Select from "react-select";
 import { useState } from "react";

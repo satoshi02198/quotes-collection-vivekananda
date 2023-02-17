@@ -1,6 +1,5 @@
 import Collection from "@/components/Collection";
 import ShowQuotes from "@/components/ShowQuotes";
-import Test from "@/components/Test";
 
 export default function Home() {
   return (
