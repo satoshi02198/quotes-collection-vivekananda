@@ -5,6 +5,7 @@ import { SessionProvider } from "@/components/SessionProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Montserrat } from "@next/font/google";
+import ClientProvider from "@/components/ClientProvider";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -27,9 +28,10 @@ export default async function RootLayout({
       */}
       <head />
       <body
-        className={`${montserrat.className} h-screen bg-gray-100 max-w-screen-2xl mx-auto`}
+      // className={`${montserrat.className} h-screen bg-gray-100 max-w-screen-2xl mx-auto`}
       >
         <SessionProvider session={session}>
+          <ClientProvider />
           <Header />
           {children}
           <Footer />

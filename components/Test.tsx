@@ -7,362 +7,257 @@ const Test = () => {
   const quotes = [
     {
       id: 1,
-      text: "Arise, awake, and stop not until the goal is achieved.",
+      text: "All of us have to do our duty, but we should not be attached to the results. Attaining evenness of mind is yoga.",
       resource:
-        "The Complete Works of Swami Vivekananda, Volume 1, Lectures and Discourses, Work and Its Secret",
-      resource_page: "p. 23",
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, I",
+      resource_page: "p. 5",
     },
     {
       id: 2,
-      text: "We are what our thoughts have made us; so take care about what you think. Words are secondary. Thoughts live; they travel far.",
+      text: "The sign of life is strength and growth. The sign of death is weakness. Whatever is weak, avoid! It is death. If it is strength, go down into hell and get hold of it! There is salvation only for the brave.",
       resource:
-        "The Complete Works of Swami Vivekananda, Volume 1, Lectures and Discourses, The Powers of the Mind",
-      resource_page: "p. 5",
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, III",
+      resource_page: "p. 20",
     },
     {
       id: 3,
-      text: "In a conflict between the heart and the brain, follow your heart.",
+      text: "Desire is the root of all evil. Desirelessness is the realization of God.",
       resource:
-        "The Complete Works of Swami Vivekananda, Volume 2, Practical Vedanta and Other Lectures, Practical Vedanta",
-      resource_page: "p. 197",
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, V",
+      resource_page: "p. 36",
     },
     {
       id: 4,
-      text: "The greatest religion is to be true to your own nature. Have faith in yourselves!",
+      text: "It is not the love of the husband or of the wife that attracts us; it is the love of the Self shining in them. That love is the background of all forms of love, yet we do not recognize it.",
       resource:
-        "The Complete Works of Swami Vivekananda, Volume 3, Lectures from Colombo to Almora, Lectures and Discourses",
-      resource_page: "p. 229",
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, VI",
+      resource_page: "p. 41",
     },
     {
       id: 5,
-      text: "All differences in this world are of degree, and not of kind, because oneness is the secret of everything.",
+      text: "The whole world is one, but we see it as many, through the defects of our mind.",
       resource:
-        "The Complete Works of Swami Vivekananda, Volume 4, Addresses on Bhakti-Yoga, The Real Nature of Man",
-      resource_page: "p. 68",
-    },
-    {
-      id: 6,
-      text: "If money help a man to do good to others, it is of some value; but if not, it is simply a mass of evil, and the sooner it is got rid of, the better.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 6, Epistles - Second Series, LXXXIII",
-      resource_page: "p. 270",
-    },
-    {
-      id: 7,
-      text: "All the powers in the universe are already ours. It is we who have put our hands before our eyes and cry that it is dark.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 7, Conversations and Dialogues, Notes of Class Talks and Lectures",
-      resource_page: "p. 34",
-    },
-    {
-      id: 8,
-      text: "You cannot believe in God until you believe in yourself.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 8, Epistles - Fourth Series, XLV",
-      resource_page: "p. 69",
-    },
-    {
-      id: 9,
-      text: "The moment I have realized God sitting in the temple of every human body, the moment I stand in reverence before every human being and see God in him, that moment I am free from bondage, everything that binds vanishes, and I am free.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real Nature of Man",
-      resource_page: "p. 246",
-    },
-    {
-      id: 10,
-      text: "You have to grow from the inside out. None can teach you, none can make you spiritual. There is no other teacher but your own soul.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real Nature of Man",
-      resource_page: "p. 62",
-    },
-    {
-      id: 11,
-      text: "We are what our thoughts have made us; so take care about what you think. Words are secondary. Thoughts live; they travel far.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 1, Lectures and Discourses, The Powers of the Mind",
-      resource_page: "p. 5",
-    },
-    {
-      id: 12,
-      text: "Stand up, be bold, be strong. Take the whole responsibility on your own shoulders, and know that you are the creator of your own destiny.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 1, Lectures and Discourses, The Secret of Work",
-      resource_page: "p. 13",
-    },
-    {
-      id: 13,
-      text: "The greatest sin is to think that you are weak.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 1, Lectures and Discourses, The Powers of the Mind",
-      resource_page: "p. 148",
-    },
-    {
-      id: 14,
-      text: "Condemn none: if you can stretch out a helping hand, do so. If you cannot, fold your hands, bless your brothers, and let them go their own way.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 1, Lectures and Discourses, The Ideal of a Universal Religion",
-      resource_page: "p. 11",
-    },
-    {
-      id: 15,
-      text: "All the powers in the universe are already ours. It is we who have put our hands before our eyes and cry that it is dark.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 2, Conversations and Dialogues, Reported in the Calcutta Englishman",
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, VIII",
       resource_page: "p. 54",
     },
     {
-      id: 16,
-      text: "The goal of mankind is knowledge. . . . Now this knowledge is inherent in man. No knowledge comes from outside: it is all inside.",
+      id: 6,
+      text: "Every good thought that you think or act upon is as a force that goes round the world. Every selfish thought we think is also a force. Every time we think a good thought it adds its quota to the world's store of good. Every time we think a selfish thought, we put a spoke in the wheel.",
       resource:
-        "The Complete Works of Swami Vivekananda, Volume 2, Lectures and Discourses, The Real Nature of Man",
-      resource_page: "p. 9",
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, IX",
+      resource_page: "p. 63",
+    },
+    {
+      id: 7,
+      text: "You cannot see God until you are pure. All the impurities have to be washed away. God is the only pure One.",
+      resource:
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, X",
+      resource_page: "p. 68",
+    },
+    {
+      id: 8,
+      text: "The will is not free - it is a phenomenon bound by cause and effect - but there is something behind the will which is free.",
+      resource:
+        "The Complete Works of Swami Vivekananda, Volume 3, Bhakti-Yoga, XI",
+      resource_page: "p. 77",
+    },
+    {
+      id: 9,
+      text: "Love opens the most impossible gates; love is the gate to all the secrets of the universe.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 74",
+    },
+    {
+      id: 10,
+      text: "This is the one central ideal throughout Hindu religious thought—the union with the Eternal through love.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 79",
+    },
+    {
+      id: 11,
+      text: "It is love and love alone which leads to enjoyment of unity.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 86",
+    },
+    {
+      id: 12,
+      text: "He who loves never fails; where there is love there is no question.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 88",
+    },
+    {
+      id: 13,
+      text: "Love of God is the only strength and the only power and the only force that can work on the divinity inherent in our nature.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 91",
+    },
+    {
+      id: 14,
+      text: "The two principal ideals of Bhakti-Yoga are the love of the personal God and the sense of oneness with the universe.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 3, p. 106",
+    },
+    {
+      id: 15,
+      text: "The whole universe is the playground of the Lord.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 118",
+    },
+    {
+      id: 16,
+      text: "The Divine is present in every object and in every place. The whole universe is the temple of the Lord.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 120",
     },
     {
       id: 17,
-      text: "In a day, when you don't come across any problems, you can be sure that you are travelling in a wrong path.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 3, Lectures from Colombo to Almora, Lectures and Discourses",
-      resource_page: "p. 222",
+      text: "The whole universe is the manifestation of the will of the Lord; every action, every movement in the universe is the result of the will of the Lord.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 122",
     },
     {
       id: 18,
-      text: "The whole secret of existence is to have no fear. Never fear what will become of you, depend on no one. Only the moment you reject all help are you freed.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 4, Addresses on Bhakti-Yoga, The Real Nature of Man",
-      resource_page: "p. 310",
+      text: "By loving all and by hating none, by being in harmony with all, we will be able to see God in everything and in every being.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 129",
     },
     {
       id: 19,
-      text: "Do not wait for anybody or anything. Do whatever you can. Build your hope on none.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 5, Epistles - Third Series, CXIII",
-      resource_page: "p. 345",
+      text: "Let us be unselfish; let us work together to reach the same goal; let us be mutually helpful; let us forget ourselves in working for the good of the whole.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 131",
     },
     {
       id: 20,
-      text: "Be a hero. Always say, 'I have no fear.' Tell this to everyone—'Have no fear.'",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 5, Epistles - Second Series, XXXII",
-      resource_page: "p. 105",
+      text: "The whole universe is sustained by the Lord; He is the source of all strength and all power.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 139",
     },
     {
       id: 21,
-      text: "All knowledge that the world has ever received comes from the mind; the infinite library of the universe is in our own mind.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 5, Notes from Lectures and Discourses, The Cosmos: The Microcosm",
-      resource_page: "p. 299",
+      text: "God can be realized through the love that we have for Him.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 142",
     },
     {
       id: 22,
-      text: "The remedy for weakness is not brooding over weakness, but thinking of strength.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 6, Epistles - First Series, LXXXIII",
-      resource_page: "p. 285",
+      text: "The love of the Lord is the only thing that can purify the heart and free us from all impurities.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 149",
     },
     {
       id: 23,
-      text: "As soon as I think that I am a little body, I want to preserve it, to protect it, to keep it nice, at the expense of other bodies; then you and I become separate.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 6, Conversations and Dialogues, Reported in the Prabuddha Bharata",
-      resource_page: "p. 107",
+      text: "The love of the Lord is like a stream that flows through the heart and purifies it.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 150",
     },
     {
       id: 24,
-      text: "Infinite power and possibilities are inherent in man.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 6, Conversations and Dialogues, Reported in the Calcutta Englishman",
-      resource_page: "p. 21",
+      text: "The love of the Lord is the most powerful force in the universe; it can overcome all obstacles and purify the heart.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 154",
     },
     {
       id: 25,
-      text: "The great secret of true success, of true happiness, is this: the man or woman who asks for no return, the perfectly unselfish person, is the most successful.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 7, Epistles - Second Series, XLIX",
-      resource_page: "p. 118",
+      text: "The love of the Lord is the only thing that can free us from the bondage of the world.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 155",
     },
     {
       id: 26,
-      text: "The cause of all the miseries we have in the world is that men foolishly think pleasure to be the ideal to strive for.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 7, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 18",
+      text: "The love of the Lord is the only thing that can give us true happiness.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 156",
     },
     {
       id: 27,
-      text: "No one can get anything unless he earns it. This is an eternal law. We may sometimes think it is not true, but in the long run, we become convinced of it.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 8, Epistles - Second Series, CXCV",
-      resource_page: "p. 34",
+      text: "The love of the Lord is the only thing that can give us true peace.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 156",
     },
     {
       id: 28,
-      text: "The very reason for nature's existence is for the education of the soul; it has no other meaning; it is there for its own sake.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 8, Lectures and Discourses, The Cosmos: The Microcosm",
-      resource_page: "p. 232",
+      text: "The love of the Lord is the only thing that can give us true fulfillment.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 156",
     },
     {
       id: 29,
-      text: "Do not be afraid of a small beginning; great things come afterwards.",
-      resource:
-        "The Complete Works of Swami Vive  kananda, Volume 8, Lectures and Discourses, Bhakti or Devotion",
-      resource_page: "p. 25",
+      text: "All power is within you; you can do anything and everything.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 1, p. 19",
     },
     {
       id: 30,
-      text: "Purity, patience, and perseverance are the three essentials to success, and above all, love.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 8, Lectures and Discourses, Practical Vedanta",
-      resource_page: "p. 170",
+      text: "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 1, p. 20",
     },
     {
       id: 31,
-      text: "The best way to serve God is by serving humanity.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 8, Lectures and Discourses, Practical Vedanta",
-      resource_page: "p. 200",
+      text: "You have to grow from the inside out. None can teach you, none can make you spiritual. There is no other teacher but your own soul.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 1, p. 22",
     },
     {
       id: 32,
-      text: "Anything that makes weak—physically, intellectually, and spiritually—reject it as poison.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 8, Epistles - Second Series, LXXXIX",
-      resource_page: "p. 295",
+      text: "The goal of all nature is to attain liberation, and man is the only being who can consciously work towards that end.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 36",
     },
     {
       id: 33,
-      text: "As long as we require someone else to make us happy, we are slaves.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Conversations and Dialogues, Reported in the Prabuddha Bharata",
-      resource_page: "p. 364",
+      text: "All the different paths of yoga ultimately lead to the same goal, which is the realization of God.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 2, p. 39",
     },
     {
       id: 34,
-      text: "We are what our thoughts have made us; so take care about what you think. Words are secondary. Thoughts live; they travel far.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Secret of Work",
-      resource_page: "p. 6",
+      text: "The love of God is the greatest power in the universe; it can transform the whole world.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 3, p. 84",
     },
     {
       id: 35,
-      text: "The goal of mankind is knowledge.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real Nature of Man",
-      resource_page: "p. 8",
+      text: "The love of God is the only thing that can give us true happiness and fulfillment.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 3, p. 85",
     },
     {
       id: 36,
-      text: "Conquer yourself, and the whole universe is yours.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real Nature of Man",
-      resource_page: "p. 26",
+      text: "To see God, you must have the eyes of love.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 122",
     },
     {
       id: 37,
-      text: "Education is not the amount of information that is put into your brain and runs riot there, undigested, all your life. We must have life-building, man-making, character-making assimilation of ideas.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Education of the Future",
-      resource_page: "p. 18",
+      text: "Love is the greatest purifier; it can free us from all impurities and make us one with God.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 124",
     },
     {
       id: 38,
-      text: "We are responsible for what we are, and whatever we wish ourselves to be, we have the power to make ourselves. If what we are now has been the result of our own past actions, it certainly follows that whatever we wish to be in future can be produced by our present actions.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 105",
+      text: "The only thing that can save the world is the love of God.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 4, p. 126",
     },
     {
       id: 39,
-      text: "Arise, awake, and stop not until the goal is reached.",
-      resource:
-        "The Complete Works of Swami Vivekananda  , Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 108",
+      text: "God is not far away from us; He is nearer to us than our own soul.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 144",
     },
     {
       id: 40,
-      text: "The will is not free - it is a phenomenon bound by cause and effect - but there is something behind the will which is free.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 255",
-    },
-    {
-      id: 41,
-      text: "You cannot believe in God until you believe in yourself.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 284",
-    },
-    {
-      id: 42,
-      text: "The powers of the mind are like the rays of the sun when they are concentrated they illumine.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 285",
-    },
-    {
-      id: 43,
-      text: "Strength is life, weakness is death.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 298",
-    },
-    {
-      id: 44,
-      text: "The greatest sin is to think yourself weak.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 298",
-    },
-    {
-      id: 45,
-      text: "If you think yourselves strong, strong you will be.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 298",
-    },
-    {
-      id: 46,
-      text: "All power is within you; you can do anything and everything. Believe in that, do not believe that you are weak; do not believe that you are half-crazy lunatics, as most of us do nowadays. Stand up and express the divinity within you.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 298",
-    },
-    {
-      id: 47,
-      text: "We are responsible for what we are, and whatever we wish ourselves to be, we have the power to make ourselves. If what we are now has been the result of our own past actions, it certainly follows that whatever we wish to be in future can be produced by our present actions.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 9, Lectures and Discourses, The Real and the Apparent Man",
-      resource_page: "p. 105",
-    },
-    {
-      id: 48,
-      text: "In a day, when you don’t come across any problems—you can be sure that you are travelling in a wrong path.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 6, Epistles - Second Series, XCV",
-      resource_page: "p. 334",
-    },
-    {
-      id: 49,
-      text: "The world is the great gymnasium where we come to make ourselves strong.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 6, Epistles - Second Series, XLVII",
-      resource_page: "p. 325",
-    },
-    {
-      id: 50,
-      text: "It is our own mental attitude which makes the world what it is for us. Our thoughts make things beautiful, our thoughts make things ugly. The whole world is in our own minds. Learn to see things in the proper light.",
-      resource:
-        "The Complete Works of Swami Vivekananda, Volume 2, Karma-Yoga, IV",
-      resource_page: "p. 66",
+      text: "The love of God is the only thing that can satisfy the longings of the human heart.",
+      resource: "Bhakti-Yoga",
+      resource_page: "Ch. 5, p. 155",
     },
   ];
 
   const pushData = () => {
     quotes.forEach((quote, index) =>
-      setDoc(
-        doc(db, "The Complete Works of Swami Vivekananda", `${index}`),
-        quote
-      )
+      setDoc(doc(db, "Bhakti-Yoga", `${index}`), quote)
     );
   };
 

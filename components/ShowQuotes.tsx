@@ -6,6 +6,7 @@ import { collection, query } from "firebase/firestore";
 import Quote from "./Quote";
 import Select from "react-select";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const options = [
   {
@@ -13,6 +14,7 @@ const options = [
     label: "The Complete Works of Swami Vivekananda",
   },
   { value: "Karma-Yoga", label: "Karma-Yoga" },
+  { value: "Bhakti-Yoga", label: "Bhakti-Yoga" },
 ];
 
 const ShowQuotes = () => {
@@ -20,6 +22,12 @@ const ShowQuotes = () => {
     "The Complete Works of Swami Vivekananda"
   );
   const [quotes] = useCollection(query(collection(db, resource)));
+
+  const { data: session } = useSession();
+
+  // const [savedQuote] = useCollection(
+  //   query(collection(db, "users", session?.user?.email!, "quote"))
+  // );
 
   const handleChange = (e: any) => {
     setResource(e.value);
@@ -30,10 +38,17 @@ const ShowQuotes = () => {
       <Select
         options={options}
         className="mb-2 bg-gray-100 font-semibold"
+        styles={{
+          control: (baseStyles, state) => ({
+            ...baseStyles,
+            borderColor: state.isFocused ? "green" : "gray",
+            color: "green",
+          }),
+        }}
         onChange={handleChange}
       />
       {quotes?.docs.map((quote) => (
-        <Quote chapter_2={quote.data()} key={quote.id} />
+        <Quote quotes={quote.data()} key={quote.id} />
       ))}
     </div>
   );

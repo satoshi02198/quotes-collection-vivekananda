@@ -1,6 +1,7 @@
 "use client";
 
 import Log from "./Log";
+import Test from "./Test";
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       <div>
         <div className="font-bold text-2xl">Quotes Collection</div>
       </div>
-
+      {/* <Test /> */}
       <Log />
     </div>
   );
