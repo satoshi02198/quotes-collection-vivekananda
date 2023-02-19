@@ -1,3 +1,5 @@
+"use client";
+
 import {
   addDoc,
   collection,
@@ -15,8 +17,14 @@ type Props = {
 };
 
 const Quote = ({ quotes }: Props) => {
-  const { id, text, resource, resource_page, isSaved } = quotes;
+  const { id, text, resource, resource_page } = quotes;
   const { data: session } = useSession();
+
+  const [savedQuote] = useCollection(
+    session && query(collection(db, "users", session?.user?.email!, "quote"))
+  );
+
+  const savedQuotesText = savedQuote?.docs.map((saved) => saved.data().text);
 
   const saveQuote = async () => {
     await addDoc(collection(db, "users", session?.user?.email!, "quote"), {
@@ -39,7 +47,9 @@ const Quote = ({ quotes }: Props) => {
       <div className="flex justify-end mt-3">
         <HeartIcon className="w-4 h-4 cursor-pointer" />
         <BookmarkSquareIcon
-          className="w-4 h-4 cursor-pointer"
+          className={`w-4 h-4 cursor-pointer ${
+            savedQuotesText?.includes(text) && "text-green-600"
+          }`}
           onClick={saveQuote}
         />
       </div>
