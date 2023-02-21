@@ -17,7 +17,7 @@ const ShowSavedCollection = () => {
   return (
     <div className="overflow-auto mx-auto max-h-[550px] space-y-1.5">
       {savedQuote?.docs.map((saved) => (
-        <DisplaySavedCollection key={saved.data().id} saved={saved.data()} />
+        <DisplaySavedCollection key={saved.data().text} saved={saved.data()} />
       ))}
     </div>
   );
