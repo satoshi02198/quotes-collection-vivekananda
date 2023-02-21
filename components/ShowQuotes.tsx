@@ -18,9 +18,7 @@ const options = [
 ];
 
 const ShowQuotes = () => {
-  const [resource, setResource] = useState(
-    "The Complete Works of Swami Vivekananda"
-  );
+  const [resource, setResource] = useState("default");
   const [quotes] = useCollection(query(collection(db, resource)));
 
   const { data: session } = useSession();
@@ -34,8 +32,9 @@ const ShowQuotes = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-1 w-[95%] mx-auto mt-2 max-h-[600px] overflow-auto">
+    <div className="flex flex-col space-y-1  w-full mx-auto px-1 mt-2 max-h-[500px] overflow-auto min-h-[300px]">
       <Select
+        placeholder="Let's select Resource Book..."
         options={options}
         className="mb-2 bg-gray-100 font-semibold"
         styles={{
@@ -48,7 +47,12 @@ const ShowQuotes = () => {
         onChange={handleChange}
       />
       {quotes?.docs.map((quote) => (
-        <Quote quotes={quote.data()} key={quote.id} />
+        <Quote
+          quotes={quote.data()}
+          key={quote.id}
+          docId={quote.id}
+          bookResource={resource}
+        />
       ))}
     </div>
   );
