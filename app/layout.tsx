@@ -27,9 +27,7 @@ export default async function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body
-      // className={`${montserrat.className} h-screen bg-gray-100 max-w-screen-2xl mx-auto`}
-      >
+      <body className={`${montserrat.className}  max-w-screen-2xl mx-auto`}>
         <SessionProvider session={session}>
           <ClientProvider />
           <Header />
