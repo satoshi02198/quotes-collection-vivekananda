@@ -32,7 +32,8 @@ const ShowQuotes = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-1  w-full mx-auto px-1 mt-2 max-h-[500px] overflow-auto min-h-[300px]">
+    <div className="md:w-[80%]">
+      {" "}
       <Select
         placeholder="Let's select Resource Book..."
         options={options}
@@ -46,14 +47,16 @@ const ShowQuotes = () => {
         }}
         onChange={handleChange}
       />
-      {quotes?.docs.map((quote) => (
-        <Quote
-          quotes={quote.data()}
-          key={quote.id}
-          docId={quote.id}
-          bookResource={resource}
-        />
-      ))}
+      <div className="flex flex-col space-y-1  w-full mx-auto px-1 mt-2 max-h-[500px] overflow-auto min-h-[300px]">
+        {quotes?.docs.map((quote) => (
+          <Quote
+            quotes={quote.data()}
+            key={quote.id}
+            docId={quote.id}
+            bookResource={resource}
+          />
+        ))}
+      </div>
     </div>
   );
 };
