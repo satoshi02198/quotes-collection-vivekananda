@@ -4,9 +4,10 @@ import Image from "next/image";
 
 type Props = {
   session: object;
+  toggle: any;
 };
 
-const Logout = ({ session }: Props) => {
+const Logout = ({ session, toggle }: Props) => {
   const { user }: any = session;
 
   return (
@@ -17,7 +18,7 @@ const Logout = ({ session }: Props) => {
         height={40}
         alt={user.name}
         className="rounded-full cursor-pointer "
-        onClick={() => signOut()}
+        onClick={() => toggle()}
       />
     </div>
   );
