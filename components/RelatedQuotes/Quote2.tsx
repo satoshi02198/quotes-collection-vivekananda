@@ -1,33 +1,32 @@
 "use client";
 
+import { db } from "@/firebase";
+import { BookmarkSquareIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { HeartIcon as HeartIcon2 } from "@heroicons/react/24/solid";
 import {
-  addDoc,
   collection,
+  deleteDoc,
+  doc,
   DocumentData,
+  increment,
   query,
   serverTimestamp,
   setDoc,
-  doc,
-  increment,
   updateDoc,
-  deleteDoc,
-  where,
 } from "firebase/firestore";
-import { HeartIcon, BookmarkSquareIcon } from "@heroicons/react/24/outline";
-import { HeartIcon as HeartIcon2 } from "@heroicons/react/24/solid";
-import { db } from "@/firebase";
 import { useSession } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import toast from "react-hot-toast";
 
 type Props = {
-  quotes: DocumentData;
+  InfoOfQuotes: DocumentData;
   docId: string;
   bookResource: string;
+  author: string;
 };
 
-const Quote = ({ quotes, docId, bookResource }: Props) => {
-  const { id, text, resource, resource_page, like } = quotes;
+const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
+  const { id, text, resource, resource_page, like } = InfoOfQuotes;
   const { data: session } = useSession();
 
   //read user's saved quotes and extract its text
@@ -48,10 +47,18 @@ const Quote = ({ quotes, docId, bookResource }: Props) => {
   //save unsave
   const saveQuote = async () => {
     if (savedQuotesText?.includes(text)) {
+      await updateDoc(doc(db, author, bookResource, "quote", docId), {
+        saved: increment(-1),
+      });
+
       await deleteDoc(
         doc(db, "users", session?.user?.email!, "savedQuote", text)
       );
     } else {
+      await updateDoc(doc(db, author, bookResource, "quote", docId), {
+        saved: increment(1),
+      });
+
       await setDoc(
         doc(db, "users", session?.user?.email!, "savedQuote", text),
         {
@@ -70,16 +77,16 @@ const Quote = ({ quotes, docId, bookResource }: Props) => {
   //like unlike
   const addLike = async () => {
     if (likedQuotesText?.includes(text)) {
-      await updateDoc(doc(db, bookResource, docId), {
-        like: increment(-1),
+      await updateDoc(doc(db, author, bookResource, "quote", docId), {
+        liked: increment(-1),
       });
 
       await deleteDoc(
         doc(db, "users", session?.user?.email!, "likeQuotes", text)
       );
     } else {
-      await updateDoc(doc(db, bookResource, docId), {
-        like: increment(1),
+      await updateDoc(doc(db, author, bookResource, "quote", docId), {
+        liked: increment(1),
       });
       await setDoc(
         doc(db, "users", session?.user?.email!, "likeQuotes", text),

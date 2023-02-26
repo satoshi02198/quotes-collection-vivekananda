@@ -1,7 +1,7 @@
 "use client";
 
-import Log from "./Log";
-import Test from "./Test";
+import Log from "../RelatedLogIn/Log";
+import Test from "../Test";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";

@@ -2,7 +2,7 @@ import "./globals.css";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 import { SessionProvider } from "@/components/SessionProvider";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
 import { Montserrat } from "@next/font/google";
 import ClientProvider from "@/components/ClientProvider";

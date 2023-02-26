@@ -2,7 +2,11 @@
 import Link from "next/link";
 import ShowSavedCollection from "./ShowSavedCollection";
 
-const Collection = () => {
+type Props = {
+  author: string;
+};
+
+const Collection = ({ author }: Props) => {
   return (
     <>
       <div className="md:hidden">
@@ -15,7 +19,7 @@ const Collection = () => {
 
       <div className="hidden shadow-sm rouded-sm bg-gray-100 md:block w-[70%] border-2 min-h-[400px] overflow-auto  ">
         <h1 className="text-2xl py-2 px-2 border-b-2 border-lime-700">
-          Your Collection
+          {`Your Collection for ${author}`}
         </h1>
         <ShowSavedCollection />
       </div>

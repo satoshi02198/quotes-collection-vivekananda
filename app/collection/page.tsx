@@ -1,4 +1,4 @@
-import ShowSavedCollection from "@/components/ShowSavedCollection";
+import ShowSavedCollection from "@/components/RelatedCollection/ShowSavedCollection";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const SavedCollection = () => {

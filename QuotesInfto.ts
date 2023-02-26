@@ -1,4 +1,4 @@
-const quoteOfTheComplete = [
+export const quoteOfTheComplete = [
   {
     id: 1,
     text: "Arise, awake, and stop not until the goal is achieved.",

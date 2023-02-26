@@ -4,7 +4,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 
 const Test = () => {
-  const quotes = [
+  const quoteOfBhaktiYoga = [
     {
       id: 1,
       text: "All of us have to do our duty, but we should not be attached to the results. Attaining evenness of mind is yoga.",
@@ -256,8 +256,17 @@ const Test = () => {
   ];
 
   const pushData = () => {
-    quotes.forEach((quote, index) =>
-      setDoc(doc(db, "Bhakti-Yoga", `${index}`), quote)
+    quoteOfBhaktiYoga.forEach((quote, index) =>
+      setDoc(
+        doc(
+          db,
+          "Swami-Vivekananda",
+          "BhaktiYoga",
+          "quote",
+          `${quote.id}:BhaktiYoga`
+        ),
+        quote
+      )
     );
   };
 
