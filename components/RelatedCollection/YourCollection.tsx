@@ -1,7 +1,7 @@
 "use client";
 
 import { db } from "@/firebase";
-import { collection, query, where } from "firebase/firestore";
+import { collection, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import DisplaySavedCollection from "./DisplaySavedCollection";
@@ -10,15 +10,12 @@ type Props = {
   author: string;
 };
 
-const ShowSavedCollection = ({ author }: Props) => {
+const YourCollection = () => {
   const { data: session } = useSession();
 
   const [savedQuote] = useCollection(
     session &&
-      query(
-        collection(db, "users", session?.user?.email!, "savedQuote"),
-        where("author", "==", author)
-      )
+      query(collection(db, "users", session?.user?.email!, "savedQuote"))
   );
 
   return (
@@ -30,4 +27,4 @@ const ShowSavedCollection = ({ author }: Props) => {
   );
 };
 
-export default ShowSavedCollection;
+export default YourCollection;

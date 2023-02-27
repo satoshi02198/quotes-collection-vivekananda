@@ -12,8 +12,12 @@ type Props = {
 const Page = ({ params: { author } }: Props) => {
   return (
     <div>
-      {AuthorInfo?.map((author, index) => (
-        <AuthorProfile key={index + 1} authorInfo={author} />
+      {AuthorInfo?.map((authorInfo, index) => (
+        <AuthorProfile
+          key={index + 1}
+          authorInfo={authorInfo}
+          pathAuthorName={author}
+        />
       ))}
       <div className="flex flex-col items-center space-y-8 md:flex md:flex-row md:items-baseline md:space-x-10 h-auto md:mb-20 mx-2 mb-5">
         <Showquotes author={author} />

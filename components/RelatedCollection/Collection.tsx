@@ -21,7 +21,7 @@ const Collection = ({ author }: Props) => {
         <h1 className="text-2xl py-2 px-2 border-b-2 border-lime-700">
           {`Your Collection for ${author}`}
         </h1>
-        <ShowSavedCollection />
+        <ShowSavedCollection author={author} />
       </div>
     </>
   );

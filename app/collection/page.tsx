@@ -1,4 +1,4 @@
-import ShowSavedCollection from "@/components/RelatedCollection/ShowSavedCollection";
+import YourCollection from "@/components/RelatedCollection/YourCollection";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const SavedCollection = () => {
@@ -8,7 +8,7 @@ const SavedCollection = () => {
         Your Collection
       </h1>
 
-      <ShowSavedCollection />
+      <YourCollection />
       <div className="flex space-x-1 justify-center items-center">
         <ArrowLeftIcon className="w-4 h-4" />
         <a href="/" className="text-sm cursor-pointer border-b">

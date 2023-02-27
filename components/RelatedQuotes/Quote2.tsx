@@ -26,7 +26,7 @@ type Props = {
 };
 
 const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
-  const { id, text, resource, resource_page, like } = InfoOfQuotes;
+  const { id, text, resource, resource_page, liked } = InfoOfQuotes;
   const { data: session } = useSession();
 
   //read user's saved quotes and extract its text
@@ -69,6 +69,7 @@ const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
           userId: session?.user?.email!,
           savedAt: serverTimestamp(),
           isSaved: true,
+          author: author,
         }
       );
     }
@@ -135,7 +136,7 @@ const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
               <HeartIcon className="w-5 h-5 cursor-pointer" onClick={addLike} />
             )}{" "}
             <span className="absolute top-0 left-6 text-gray-500 text-sm">
-              {like}
+              {liked}
             </span>
           </div>{" "}
           <BookmarkSquareIcon
