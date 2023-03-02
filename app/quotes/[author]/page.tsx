@@ -2,6 +2,7 @@ import AuthorProfile from "@/components/Authors/AuthorProfile";
 import Collection from "@/components/RelatedCollection/Collection";
 import Showquotes from "@/components/RelatedQuotes/Showquotes";
 import { AuthorInfo } from "@/AuthorInfo";
+import BottomContents from "@/components/BottomContents";
 
 type Props = {
   params: {
@@ -19,10 +20,7 @@ const Page = ({ params: { author } }: Props) => {
           pathAuthorName={author}
         />
       ))}
-      <div className="flex flex-col items-center space-y-8 md:flex md:flex-row md:items-baseline md:space-x-10 h-auto md:mb-20 mx-2 mb-5">
-        <Showquotes author={author} />
-        <Collection author={author} />
-      </div>
+      <BottomContents author={author} />
     </div>
   );
 };

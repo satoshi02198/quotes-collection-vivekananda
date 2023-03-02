@@ -4,9 +4,10 @@ import ShowSavedCollection from "./ShowSavedCollection";
 
 type Props = {
   author: string;
+  openModal: () => void;
 };
 
-const Collection = ({ author }: Props) => {
+const Collection = ({ author, openModal }: Props) => {
   return (
     <>
       <div className="md:hidden">

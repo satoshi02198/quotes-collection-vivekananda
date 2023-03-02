@@ -5,13 +5,15 @@ import { collection } from "firebase/firestore";
 import { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Select from "react-select";
-import Quote2 from "./Quote2";
+import LoginModal from "../LoginModal";
+import Quote from "./Quote";
 
 type Props = {
   author: string;
+  openModal: () => void;
 };
 
-const Showquotes = ({ author }: Props) => {
+const Showquotes = ({ author, openModal }: Props) => {
   const [resource, setResource] = useState("default");
 
   const [InfoOfAuthor] = useCollection(collection(db, author));
@@ -29,7 +31,7 @@ const Showquotes = ({ author }: Props) => {
   };
 
   return (
-    <div className="md:w-[80%]">
+    <div className="md:w-[80%] relative">
       <Select
         placeholder="Let's select Resource Book..."
         options={options}
@@ -45,12 +47,13 @@ const Showquotes = ({ author }: Props) => {
       />
       <div className="flex flex-col space-y-1  w-full mx-auto px-1 mt-2 max-h-[500px] overflow-auto min-h-[300px]">
         {InfoOfQuotes?.docs.map((InfoOfQuotes) => (
-          <Quote2
+          <Quote
             InfoOfQuotes={InfoOfQuotes.data()}
             author={author}
             key={InfoOfQuotes.id}
             docId={InfoOfQuotes.id}
             bookResource={resource}
+            openModal={openModal}
           />
         ))}
       </div>

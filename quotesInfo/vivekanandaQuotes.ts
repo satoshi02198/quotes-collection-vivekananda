@@ -351,7 +351,7 @@ export const quoteOfTheComplete = [
   },
 ];
 
-const quoteOfKarmaYoga = [
+export const quoteOfKarmaYoga = [
   {
     id: 1,
     text: "You have the right to work, but never to the fruit of work.",
@@ -703,7 +703,7 @@ const quoteOfKarmaYoga = [
   },
 ];
 
-const quoteOfBhaktiYoga = [
+export const quoteOfBhaktiYoga = [
   {
     id: 1,
     text: "All of us have to do our duty, but we should not be attached to the results. Attaining evenness of mind is yoga.",

@@ -17,7 +17,7 @@ const Logout = ({ session, toggle }: Props) => {
         width={40}
         height={40}
         alt={user.name}
-        className="rounded-full cursor-pointer "
+        className="rounded-sm cursor-pointer "
         onClick={() => toggle()}
       />
     </div>

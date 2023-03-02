@@ -15,18 +15,28 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import toast from "react-hot-toast";
+import LoginModal from "../LoginModal";
 
 type Props = {
   InfoOfQuotes: DocumentData;
   docId: string;
   bookResource: string;
   author: string;
+  openModal: () => void;
 };
 
-const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
+const Quote = ({
+  InfoOfQuotes,
+  docId,
+  bookResource,
+  author,
+  openModal,
+}: Props) => {
   const { id, text, resource, resource_page, liked } = InfoOfQuotes;
+
   const { data: session } = useSession();
 
   //read user's saved quotes and extract its text
@@ -46,7 +56,9 @@ const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
 
   //save unsave
   const saveQuote = async () => {
-    if (savedQuotesText?.includes(text)) {
+    if (!session) {
+      openModal();
+    } else if (savedQuotesText?.includes(text)) {
       await updateDoc(doc(db, author, bookResource, "quote", docId), {
         saved: increment(-1),
       });
@@ -77,7 +89,9 @@ const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
 
   //like unlike
   const addLike = async () => {
-    if (likedQuotesText?.includes(text)) {
+    if (!session) {
+      openModal();
+    } else if (likedQuotesText?.includes(text)) {
       await updateDoc(doc(db, author, bookResource, "quote", docId), {
         liked: increment(-1),
       });
@@ -105,49 +119,54 @@ const Quote = ({ InfoOfQuotes, docId, bookResource, author }: Props) => {
   };
 
   return (
-    <div className="bg-gray-50 border-1 shadow-sm w-full h-auto p-2">
-      <p className="text-md">“{text}”</p>
-      <p className="text-xs text-gray-400 mt-1">
-        {resource} :{resource_page}
-      </p>
-      <div className="flex justify-between mt-3">
-        <button
-          className="bg-gray-200 rounded shadow-sm px-2 py-1 text-sm font-bold text-lime-800 hover:bg-gray-100 active:bg-gray-300 transition duration-200 ease-in-out "
-          onClick={() => {
-            navigator.clipboard.writeText(text);
-            toast.success("Copy!", {
-              iconTheme: {
-                primary: "#3f6212",
-                secondary: "#FFFAEE",
-              },
-            });
-          }}
-        >
-          Copy
-        </button>
-        <div className="flex space-x-5">
-          <div className="relative">
-            {likedQuotesText?.includes(text) ? (
-              <HeartIcon2
-                className="w-5 h-5 cursor-pointer text-red-300 "
-                onClick={addLike}
-              />
-            ) : (
-              <HeartIcon className="w-5 h-5 cursor-pointer" onClick={addLike} />
-            )}{" "}
-            <span className="absolute top-0 left-6 text-gray-500 text-sm">
-              {liked}
-            </span>
-          </div>{" "}
-          <BookmarkSquareIcon
-            className={`w-5 h-5 cursor-pointer ${
-              savedQuotesText?.includes(text) && "text-green-600"
-            }`}
-            onClick={saveQuote}
-          />
+    <>
+      <div className="bg-gray-50 border-1 shadow-sm w-full h-auto p-2">
+        <p className="text-md">“{text}”</p>
+        <p className="text-xs text-gray-400 mt-1">
+          {resource} :{resource_page}
+        </p>
+        <div className="flex justify-between mt-3">
+          <button
+            className="bg-gray-200 rounded shadow-sm px-2 py-1 text-sm font-bold text-lime-800 hover:bg-gray-100 active:bg-gray-300 transition duration-200 ease-in-out "
+            onClick={() => {
+              navigator.clipboard.writeText(text);
+              toast.success("Copy!", {
+                iconTheme: {
+                  primary: "#3f6212",
+                  secondary: "#FFFAEE",
+                },
+              });
+            }}
+          >
+            Copy
+          </button>
+          <div className="flex space-x-5">
+            <div className="relative">
+              {likedQuotesText?.includes(text) ? (
+                <HeartIcon2
+                  className="w-5 h-5 cursor-pointer text-red-300 "
+                  onClick={addLike}
+                />
+              ) : (
+                <HeartIcon
+                  className="w-5 h-5 cursor-pointer"
+                  onClick={addLike}
+                />
+              )}{" "}
+              <span className="absolute top-0 left-6 text-gray-500 text-sm">
+                {liked}
+              </span>
+            </div>{" "}
+            <BookmarkSquareIcon
+              className={`w-5 h-5 cursor-pointer ${
+                savedQuotesText?.includes(text) && "text-green-600"
+              }`}
+              onClick={saveQuote}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
