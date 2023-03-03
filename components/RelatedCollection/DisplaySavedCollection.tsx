@@ -30,7 +30,7 @@ const DisplaySavedCollection = ({ saved }: Props) => {
         </p>
         <div className="flex justify-between">
           <button
-            className="bg-gray-200 rounded shadow-sm px-2 py-1 text-sm font-bold text-lime-800 hover:bg-gray-100 active:bg-gray-300 transition duration-200 ease-in-out "
+            className="bg-gray-100 rounded shadow-sm px-2 py-1 text-md text-lime-900 hover:bg-gray-200 active:bg-gray-300 transition duration-200 ease-in-out "
             onClick={() => {
               navigator.clipboard.writeText(text);
               toast.success("Copy!", {

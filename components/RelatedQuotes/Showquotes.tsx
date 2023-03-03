@@ -5,7 +5,7 @@ import { collection } from "firebase/firestore";
 import { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Select from "react-select";
-import LoginModal from "../LoginModal";
+import LoginModal from "../RelatedLogIn/LoginModal";
 import Quote from "./Quote";
 
 type Props = {
@@ -33,9 +33,9 @@ const Showquotes = ({ author, openModal }: Props) => {
   return (
     <div className="md:w-[80%] relative">
       <Select
-        placeholder="Let's select Resource Book..."
+        placeholder="Let's select Resources..."
         options={options}
-        className="mb-2 bg-gray-100 font-semibold"
+        className="text-xl mb-4 "
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,

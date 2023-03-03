@@ -1,6 +1,6 @@
 "use client";
 
-import LoginModal from "@/components/LoginModal";
+import LoginModal from "@/components/RelatedLogIn/LoginModal";
 import YourCollection from "@/components/RelatedCollection/YourCollection";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useSession } from "next-auth/react";

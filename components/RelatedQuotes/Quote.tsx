@@ -15,10 +15,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import toast from "react-hot-toast";
-import LoginModal from "../LoginModal";
 
 type Props = {
   InfoOfQuotes: DocumentData;
@@ -127,7 +125,7 @@ const Quote = ({
         </p>
         <div className="flex justify-between mt-3">
           <button
-            className="bg-gray-200 rounded shadow-sm px-2 py-1 text-sm font-bold text-lime-800 hover:bg-gray-100 active:bg-gray-300 transition duration-200 ease-in-out "
+            className="bg-gray-100 rounded shadow-sm px-2 py-1 text-md  text-lime-900 hover:bg-gray-200 active:bg-gray-300 transition duration-200 ease-in-out "
             onClick={() => {
               navigator.clipboard.writeText(text);
               toast.success("Copy!", {
