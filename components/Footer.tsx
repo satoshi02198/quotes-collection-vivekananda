@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-gradient-to-t from-orange-400 to-orange-300 text-center p-3">
+    <div className="bg-gradient-to-b from-orange-300 to-orange-200 text-center p-3">
       This site is created by{" "}
       <a
         href="https://satoshi-okazaki.vercel.app/"

@@ -17,10 +17,10 @@ const LoginModal = ({ setIsModalOpen }: Props) => {
   return (
     <div
       id="loginModal"
-      className=" fixed inset-0 bg-gray-500/50 flex justify-center items-center px-4"
+      className=" fixed inset-0 bg-gray-500/50 flex justify-center items-center px-4 "
       onClick={handleModalClose}
     >
-      <div className="relative flex flex-col items-center justify-center w-full h-[200px] bg-gray-50 rounded-md shadow-md px-4 py-2 ">
+      <div className="relative flex flex-col items-center justify-center w-full h-[200px] md:w-[60%] lg:w-[40%] bg-gray-50 rounded-md shadow-md px-4 py-2 ">
         <XMarkIcon
           className="absolute top-3 right-3 w-5 h-5"
           onClick={() => setIsModalOpen(false)}
@@ -28,7 +28,7 @@ const LoginModal = ({ setIsModalOpen }: Props) => {
         <h2 className="text-xl mb-2">Let`s Collect Your Favarite Quotes!</h2>
         <p className="mb-4 text-sm">To collect you favarite Quotes..</p>
         <button
-          className="bg-gray-200 px-6 py-2 w-[80%] rounded-md hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-300 transition duration-200 ease-in-out"
+          className="bg-gray-200 px-6 py-2 w-[80%] rounded-md hover:bg-gray-300 focus:bg-gray-300 active:bg-gray-400 transition duration-200 ease-in-out"
           onClick={() => signIn("google")}
         >
           <div className="flex justify-center items-center">

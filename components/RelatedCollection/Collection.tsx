@@ -18,11 +18,11 @@ const Collection = ({ author, openModal }: Props) => {
         </Link>
       </div>
 
-      <div className="hidden shadow-sm rouded-sm bg-gray-100 md:block w-[70%] border-2 min-h-[400px] overflow-auto  ">
-        <h1 className="text-2xl py-2 px-2 border-b-2 border-lime-700">
+      <div className="hidden shadow-sm rouded-sm  md:block w-[70%] border-2 min-h-[400px] overflow-auto  ">
+        <h1 className="text-xl py-2 px-2 border-b-2 border-lime-700">
           {`Your Collection for ${author}`}
         </h1>
-        <ShowSavedCollection author={author} />
+        <ShowSavedCollection author={author} openModal={openModal} />
       </div>
     </>
   );

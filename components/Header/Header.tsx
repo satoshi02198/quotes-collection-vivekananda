@@ -24,7 +24,7 @@ const Header = () => {
   // });
 
   return (
-    <div className="flex items-center justify-between p-3 bg-gradient-to-t from-orange-400 to-orange-300 relative">
+    <div className="flex items-center justify-between p-3 bg-gradient-to-b from-orange-300 to-orange-200 relative">
       <div>
         <Link href="/">
           {" "}
@@ -36,7 +36,9 @@ const Header = () => {
         className="flex
       space-x-6"
       >
-        <Log toggle={toggle} />
+        <div className="hidden sm:flex justify-center items-center ">
+          <Log toggle={toggle} />
+        </div>
         {isOpen ? (
           <XMarkIcon className="w-10 h-10 sm:hidden" onClick={() => toggle()} />
         ) : (
