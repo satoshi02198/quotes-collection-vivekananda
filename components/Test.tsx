@@ -1,26 +1,23 @@
 "use client";
 
 import {
-  resource1,
-  resource2,
-  resource3,
-  resource4,
-  resource5,
-} from "../quotesInfo/ramakrshnaQuotes";
+  theCollectedWorks,
+  talkWithSriRamanaMaharshi,
+} from "../quotesInfo/ramanamaharshiQuotes";
 
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 
 const Test = () => {
   const pushData = () => {
-    resource2.forEach((quote, index) =>
+    talkWithSriRamanaMaharshi.forEach((quote, index) =>
       setDoc(
         doc(
           db,
-          "RamaKrishna",
-          "Ramakrishna and His Disciples",
+          "Ramana-Maharshi",
+          "Talks with Sri Ramana Maharshi",
           "quote",
-          `${quote.id}:Ramakrishna and His Disciples`
+          `${quote.id}:Talks with Sri Ramana Maharshi`
         ),
         quote
       )
@@ -37,3 +34,5 @@ const Test = () => {
 };
 
 export default Test;
+
+// Talks with Sri Ramana Maharshi

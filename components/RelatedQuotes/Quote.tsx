@@ -125,7 +125,8 @@ const Quote = ({
         </p>
         <div className="flex justify-between mt-3">
           <button
-            className="bg-gray-100 rounded shadow-sm px-2 py-1 text-md  text-lime-900 hover:bg-gray-200 active:bg-gray-300 transition duration-200 ease-in-out "
+            className="bg-gray-100 rounded shadow-sm px-2 py-1 text-md  text-lime-900 
+     hover:bg-gray-200 active:bg-gray-300 transition duration-200 ease-in-out "
             onClick={() => {
               navigator.clipboard.writeText(text);
               toast.success("Copy!", {
@@ -152,7 +153,7 @@ const Quote = ({
                 />
               )}{" "}
               <span className="absolute top-0 left-6 text-gray-500 text-sm">
-                {liked}
+                {liked === 0 ? "" : liked}
               </span>
             </div>{" "}
             <BookmarkSquareIcon
