@@ -11,7 +11,16 @@ type Props = {
 };
 
 const DisplaySavedCollection = ({ saved }: Props) => {
-  const { id, isSaved, resource, resource_page, savedAt, text, userID } = saved;
+  const {
+    author,
+    id,
+    isSaved,
+    resource,
+    resource_page,
+    savedAt,
+    text,
+    userID,
+  } = saved;
   const { data: session } = useSession();
 
   //delete quote
@@ -28,6 +37,7 @@ const DisplaySavedCollection = ({ saved }: Props) => {
         <p className="text-xs text-gray-400 mt-1">
           {resource} :{resource_page}
         </p>
+        <p className="text-xs font-bold text-lime-700 py-2">{author}</p>
         <div className="flex justify-between">
           <button
             className="bg-gray-100 rounded shadow-sm px-2 py-1 text-md text-lime-900 hover:bg-gray-200 active:bg-gray-300 transition duration-200 ease-in-out "

@@ -5,9 +5,7 @@ import { collection } from "firebase/firestore";
 import { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Select from "react-select";
-import LoginModal from "../RelatedLogIn/LoginModal";
 import Quote from "./Quote";
-// import Select from "react-tailwindcss-select";
 
 type Props = {
   author: string;
@@ -94,13 +92,3 @@ const Showquotes = ({ author, openModal }: Props) => {
   );
 };
 export default Showquotes;
-
-// const jnanaYogaQuotes = [
-//   {
-//     id: 1,
-//     text: text,
-//     resource: resource,
-//     resource_page: resource_page,
-
-//   }
-// ]

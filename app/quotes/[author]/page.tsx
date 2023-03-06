@@ -1,6 +1,4 @@
 import AuthorProfile from "@/components/Authors/AuthorProfile";
-import Collection from "@/components/RelatedCollection/Collection";
-import Showquotes from "@/components/RelatedQuotes/Showquotes";
 import { AuthorInfo } from "@/AuthorInfo";
 import BottomContents from "@/components/BottomContents";
 
