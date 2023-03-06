@@ -12,7 +12,7 @@ const SavedCollection = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center mx-2  md:mx-auto md:w-[80%] lg:w-[60%]">
-      <h1 className="text-2xl border-b-2 border-lime-600 my-2 mb-4 ">
+      <h1 className="text-2xl md:text-3xl border-b-2 border-lime-600 my-2 sm:mb-10 md:self-start">
         Your Collection
       </h1>
       {!session && (
