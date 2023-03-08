@@ -41,7 +41,7 @@ const YourCollection = () => {
         <div className="flex items-center py-0.5">
           <div className="flex-shrink-0">
             <Image
-              className="w-14 h-14 rounded-full overflow-hidden mr-2"
+              className="w-8 h-8 sm:w-14 sm:h-14 rounded-full overflow-hidden mr-2"
               src={src}
               alt="test"
               width={100}
@@ -49,7 +49,7 @@ const YourCollection = () => {
             />
           </div>
           <div className="ml-3">
-            <p className="text-2xl font-medium">{value}</p>
+            <p className="text-md md:text-2xl font-medium">{value}</p>
             {/* <p className="text-sm font-medium text-gray-900">{label}</p> */}
           </div>
         </div>
@@ -75,7 +75,7 @@ const YourCollection = () => {
           placeholder="choose a author or see all quotes"
           // defaultValue={}
           options={options}
-          className="text-xl w-full text-center"
+          className="text-md sm:text-xl w-full text-center"
           onChange={handleAuthorChange}
           formatOptionLabel={formatOptionLabel}
           theme={(theme) => ({
