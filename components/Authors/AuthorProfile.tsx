@@ -17,11 +17,15 @@ const AuthorProfile = ({ authorInfo, pathAuthorName }: Props) => {
   return (
     <div>
       {pathAuthorName === pathName ? (
-        <div className="flex flex-col items-center py-4 mt-10 border-2 mx-2 mb-5">
-          <div className="cursor-pointer">
-            <Link href={`/quotes/${pathName}`}>
-              <Image src={src} width={300} height={300} alt={name} />
-            </Link>
+        <div className="flex flex-col items-center py-4 mt-10  mx-2 mb-5 border-2 rounded-sm">
+          <div className="">
+            <Image
+              src={src}
+              width={300}
+              height={300}
+              alt={name}
+              className="w-80 h-80 rounded-sm"
+            />
           </div>
           <h2 className="text-3xl py-3">{name}</h2>
           <p className="max-w-[600px] leading-normal p-3 text-center">{bio}</p>

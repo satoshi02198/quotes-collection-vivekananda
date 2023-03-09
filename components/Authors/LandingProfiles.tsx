@@ -13,14 +13,43 @@ type Props = {
 const LandingProfiles = ({ authorInfo }: Props) => {
   const { name, src, bio, pathName } = authorInfo;
   return (
-    <div className="flex flex-col items-center w-full h-full sm:h-auto">
-      <Link href={`/quotes/${pathName}`}>
-        <div className="cursor-pointer">
-          <Image src={src} width={250} height={250} alt={name} />
-        </div>
-      </Link>
-      <h2 className="text-xl sm:text-2xl mt-2 sm:mt-3">{name}</h2>
-    </div>
+    <>
+      {/* FOR SMALL */}
+      <div className="sm:hidden w-[90%] mx-auto h-20 ">
+        <Link href={`/quotes/${pathName}`}>
+          <div className="flex justify-start items-center border-2 rounded-md  shadow-sm hover:bg-gray-100 hover:shadow-md focus:bg-gray-100 active:bg-gray-200 transition duration-200 ease-in-out cursor-pointer">
+            <Image
+              src={src}
+              width={500}
+              height={500}
+              alt={name}
+              className="rounded-l-md w-20 h-20 "
+            />
+            <div>
+              <div className="">
+                <p className="text-lg ml-3">{name}</p>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      {/* FOR DESKTOP */}
+      <div className="hidden sm:flex flex-col items-center ">
+        <Link href={`/quotes/${pathName}`}>
+          <div className="cursor-pointer rounded-sm">
+            <Image
+              src={src}
+              width={500}
+              height={500}
+              alt={name}
+              className="w-80 h-80 "
+            />
+          </div>
+        </Link>
+        <h2 className="text-xl sm:text-2xl mt-2 sm:mt-3">{name}</h2>
+      </div>
+    </>
   );
 };
 

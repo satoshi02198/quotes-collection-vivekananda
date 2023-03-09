@@ -11,7 +11,7 @@ const SavedCollection = () => {
   const { data: session } = useSession();
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center mx-2  md:mx-auto md:w-[80%] lg:w-[60%]">
+    <div className="h-screen flex flex-col items-center mx-2 mt-10  md:mx-auto md:w-[80%] lg:w-[60%]">
       <h1 className="text-2xl md:text-3xl border-b-2 border-lime-600 my-2 sm:mb-10 md:self-start">
         Your Collection
       </h1>
@@ -28,10 +28,11 @@ const SavedCollection = () => {
           </div>
         </div>
       )}
-      <YourCollection />
+      {session && <YourCollection />}
+
       <div className="flex space-x-1 justify-center items-center mt-6">
         <ArrowLeftIcon className="w-4 h-4" />
-        <a href="/" className="text-sm cursor-pointer border-b">
+        <a href="/" className="text-sm cursor-pointer border-b-2 mb-4">
           Back to Home
         </a>
       </div>

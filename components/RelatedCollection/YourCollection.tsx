@@ -70,9 +70,9 @@ const YourCollection = () => {
 
   return (
     <>
-      <div className="flex w-full mb-4">
+      <div className="flex w-full my-4 sm:my-2">
         <Select
-          placeholder="choose a author or see all quotes"
+          placeholder="choose a author "
           // defaultValue={}
           options={options}
           className="text-md sm:text-xl w-full text-center"
@@ -95,7 +95,7 @@ const YourCollection = () => {
           All
         </button>
       </div>
-      <div className="overflow-auto mx-auto  space-y-1.5 h-[530px]">
+      <div className="overflow-auto mx-auto  space-y-1.5 h-[580px]">
         {savedQuote?.docs.map((saved) => (
           <DisplaySavedCollectionForYour
             key={saved.data().text}

@@ -20,9 +20,9 @@ const LoginModal = ({ setIsModalOpen }: Props) => {
       className=" fixed inset-0 bg-gray-500/50 flex justify-center items-center px-4 "
       onClick={handleModalClose}
     >
-      <div className="relative flex flex-col items-center justify-center w-full h-[200px] md:w-[60%] lg:w-[40%] bg-gray-50 rounded-md shadow-md px-4 py-2 ">
+      <div className="relative flex flex-col items-center justify-center w-full h-[250px] md:w-[60%] lg:w-[40%] max-w-lg bg-gray-50 rounded-md shadow-md px-4 py-2 ">
         <XMarkIcon
-          className="absolute top-3 right-3 w-5 h-5"
+          className="absolute top-3 right-3 w-5 h-5 cursor-pointer"
           onClick={() => setIsModalOpen(false)}
         />
         <h2 className="text-xl mb-2">Let`s Collect Your Favarite Quotes!</h2>
