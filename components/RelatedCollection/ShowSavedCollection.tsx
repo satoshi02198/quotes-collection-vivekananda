@@ -17,7 +17,12 @@ const ShowSavedCollection = ({ author, openModal }: Props) => {
   const [savedQuote] = useCollection(
     session &&
       query(
-        collection(db, "users", session?.user?.email!, "savedQuote"),
+        collection(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "savedQuote"
+        ),
         where("author", "==", author)
       )
   );

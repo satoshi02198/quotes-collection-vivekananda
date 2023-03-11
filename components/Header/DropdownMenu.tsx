@@ -2,7 +2,12 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const DropdownMenu = ({ setIsOpen }: any) => {
+type DropdownMenuProps = {
+  setIsOpen: (arg0: boolean) => void;
+  setIsModalOpen: (arg0: boolean) => void;
+};
+
+const DropdownMenu = ({ setIsOpen, setIsModalOpen }: any) => {
   const { data: session } = useSession();
 
   return (
@@ -37,21 +42,10 @@ const DropdownMenu = ({ setIsOpen }: any) => {
         </div>
       ) : (
         <div
-          onClick={() => {
-            signIn("google");
-            setIsOpen(false);
-          }}
+          onClick={() => setIsModalOpen(true)}
           className="text-xl py-4 rounded-md hover:bg-gray-100 hover:cursor-pointer focus:bg-gray-100 active:bg-slate-200 transition duration-200 ease-in-out sm:border-none sm:pl-3 sm:py-2"
         >
-          <div className="flex justify-center items-center">
-            <Image
-              src="/googlelogo.png"
-              alt="googlelogo"
-              width={20}
-              height={20}
-            />{" "}
-            <p className="ml-3">Log In with Google</p>
-          </div>
+          <p className="ml-3">Log In </p>
         </div>
       )}
     </div>

@@ -27,7 +27,13 @@ const DisplaySavedCollectionForYour = ({ saved, resourceAuthor }: Props) => {
   //delete quote
   const deleteQuote = async () => {
     await deleteDoc(
-      doc(db, "users", session?.user?.email!, "savedQuote", text)
+      doc(
+        db,
+        "users",
+        session?.user?.email! || session?.user?.name!,
+        "savedQuote",
+        text
+      )
     );
   };
 

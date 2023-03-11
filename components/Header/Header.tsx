@@ -6,9 +6,11 @@ import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
+import LoginModal from "../RelatedLogIn/LoginModal";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -37,7 +39,7 @@ const Header = () => {
       space-x-6"
       >
         <div className="hidden sm:flex justify-center items-center ">
-          <Log toggle={toggle} />
+          <Log toggle={toggle} setIsModalOpen={setIsModalOpen} />
         </div>
         {isOpen ? (
           <XMarkIcon className="w-10 h-10 sm:hidden" onClick={() => toggle()} />
@@ -45,8 +47,11 @@ const Header = () => {
           <Bars3Icon className="w-10 h-10 sm:hidden" onClick={() => toggle()} />
         )}
 
-        {isOpen && <DropdownMenu setIsOpen={setIsOpen} />}
+        {isOpen && (
+          <DropdownMenu setIsOpen={setIsOpen} setIsModalOpen={setIsModalOpen} />
+        )}
       </div>
+      {isModalOpen && <LoginModal setIsModalOpen={setIsModalOpen} />}
     </div>
   );
 };

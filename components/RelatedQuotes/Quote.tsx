@@ -40,14 +40,28 @@ const Quote = ({
   //read user's saved quotes and extract its text
   const [savedQuote] = useCollection(
     session &&
-      query(collection(db, "users", session?.user?.email!, "savedQuote"))
+      query(
+        collection(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "savedQuote"
+        )
+      )
   );
   const savedQuotesText = savedQuote?.docs.map((saved) => saved.data().text);
 
   //read user's liked quotes and extract its text
   const [likeQuote] = useCollection(
     session &&
-      query(collection(db, "users", session?.user?.email!, "likeQuotes"))
+      query(
+        collection(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "likeQuotes"
+        )
+      )
   );
   const likedQuotesText = likeQuote?.docs.map((liked) => liked.data().text);
   // const likedQuotesId = likeQuote?.docs.map((liked) => liked.id);
@@ -70,13 +84,19 @@ const Quote = ({
       });
 
       await setDoc(
-        doc(db, "users", session?.user?.email!, "savedQuote", text),
+        doc(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "savedQuote",
+          text
+        ),
         {
           id: id,
           text: text,
           resource: resource,
           resource_page: resource_page,
-          userId: session?.user?.email!,
+          userId: session?.user?.email! || session?.user?.name!,
           savedAt: serverTimestamp(),
           isSaved: true,
           author: author,
@@ -95,20 +115,32 @@ const Quote = ({
       });
 
       await deleteDoc(
-        doc(db, "users", session?.user?.email!, "likeQuotes", text)
+        doc(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "likeQuotes",
+          text
+        )
       );
     } else {
       await updateDoc(doc(db, author, bookResource, "quote", docId), {
         liked: increment(1),
       });
       await setDoc(
-        doc(db, "users", session?.user?.email!, "likeQuotes", text),
+        doc(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "likeQuotes",
+          text
+        ),
         {
           id: id,
           text: text,
           resource: resource,
           resource_page: resource_page,
-          userId: session?.user?.email!,
+          userId: session?.user?.email! || session?.user?.name!,
           savedAt: serverTimestamp(),
           isLike: true,
         }

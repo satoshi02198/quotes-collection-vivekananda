@@ -25,7 +25,14 @@ const YourCollection = () => {
   //GET SAVED COLLECTINS
   const [savedQuote] = useCollection(
     session &&
-      query(collection(db, "users", session?.user?.email!, "savedQuote"))
+      query(
+        collection(
+          db,
+          "users",
+          session?.user?.email! || session?.user?.name!,
+          "savedQuote"
+        )
+      )
   );
 
   //?OPTION FOR SELECT
