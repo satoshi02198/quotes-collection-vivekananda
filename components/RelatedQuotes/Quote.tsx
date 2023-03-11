@@ -188,12 +188,17 @@ const Quote = ({
                 {liked === 0 ? "" : liked}
               </span>
             </div>{" "}
-            <BookmarkSquareIcon
-              className={`w-5 h-5 cursor-pointer ${
-                savedQuotesText?.includes(text) && "text-green-600"
-              }`}
-              onClick={saveQuote}
-            />
+            <div className="group relative">
+              <BookmarkSquareIcon
+                className={` w-5 h-5 cursor-pointer ${
+                  savedQuotesText?.includes(text) && "text-green-600"
+                }`}
+                onClick={saveQuote}
+              />
+              <span className="absolute bottom-11 right-[-2px] scale-0 group-hover:scale-100 text-xs rounded-md bg-orange-200 px-2 py-1 transition duration-75 ease-in-out">
+                {savedQuotesText?.includes(text) ? "Remove?" : "Bookmark"}
+              </span>
+            </div>
           </div>
         </div>
       </div>

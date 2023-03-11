@@ -16,7 +16,7 @@ export default function Home() {
         <div className="sm:flex sm:justify-center space-y-2 mt-6 sm:mt-10 sm:space-x-6 max-w-6xl mx-auto">
           {AuthorInfo?.map((author, index) => (
             <LandingProfiles key={index + 1} authorInfo={author} />
-          ))}
+          ))}{" "}
         </div>
       </div>
 
