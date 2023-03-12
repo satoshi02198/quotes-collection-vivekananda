@@ -35,7 +35,7 @@ const LandingProfiles = ({ authorInfo }: Props) => {
       </div>
 
       {/* FOR DESKTOP */}
-      <div className="hidden sm:flex flex-col items-center ">
+      <div className="hidden sm:flex flex-col items-center text-center">
         <Link href={`/quotes/${pathName}`}>
           <div className="cursor-pointer rounded-sm">
             <Image

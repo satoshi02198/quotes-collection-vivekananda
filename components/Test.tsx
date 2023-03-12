@@ -1,23 +1,23 @@
 "use client";
 
 import {
-  theCollectedWorks,
-  talkWithSriRamanaMaharshi,
-} from "../quotesInfo/ramanamaharshiQuotes";
+  AutobiographyofaYogi,
+  MansEternalQuest,
+} from "../quotesInfo/paramahansayoganandaQuotes";
 
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 
 const Test = () => {
   const pushData = () => {
-    talkWithSriRamanaMaharshi.forEach((quote, index) =>
+    MansEternalQuest.forEach((quote, index) =>
       setDoc(
         doc(
           db,
-          "Ramana-Maharshi",
-          "Talks with Sri Ramana Maharshi",
+          "Paramahansa-Yogananda",
+          "Man's Eternal Quest",
           "quote",
-          `${quote.id}:Talks with Sri Ramana Maharshi`
+          `${quote.id}:Man's Eternal Quest`
         ),
         quote
       )
