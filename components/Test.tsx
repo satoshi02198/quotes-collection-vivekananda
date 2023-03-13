@@ -1,23 +1,23 @@
 "use client";
 
 import {
-  AutobiographyofaYogi,
-  MansEternalQuest,
-} from "../quotesInfo/paramahansayoganandaQuotes";
+  theDhammapada,
+  theHeartOfTeaching,
+} from "../infos/quotesInfo/buddhaQuotes";
 
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 
 const Test = () => {
   const pushData = () => {
-    MansEternalQuest.forEach((quote, index) =>
+    theHeartOfTeaching.forEach((quote, index) =>
       setDoc(
         doc(
           db,
-          "Paramahansa-Yogananda",
-          "Man's Eternal Quest",
+          "Buddha",
+          "The Heart of the Buddha's Teaching: Transforming Suffering into Peace, Joy, and Liberation",
           "quote",
-          `${quote.id}:Man's Eternal Quest`
+          `${quote.id}:The Heart of the Buddha's Teaching: Transforming Suffering into Peace, Joy, and Liberation`
         ),
         quote
       )

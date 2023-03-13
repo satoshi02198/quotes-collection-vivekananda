@@ -1,5 +1,5 @@
 import AuthorProfile from "@/components/Authors/AuthorProfile";
-import { AuthorInfo } from "@/AuthorInfo";
+import { AuthorInfo } from "@/infos/AuthorInfo";
 import BottomContents from "@/components/BottomContents";
 
 type Props = {
